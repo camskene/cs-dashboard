@@ -1,0 +1,12 @@
+.cs-dashboard {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.cs-panel {
+  align-items: center;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+}
