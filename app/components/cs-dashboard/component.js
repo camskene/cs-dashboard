@@ -57,9 +57,19 @@ export default Component.extend({
     ]
   }),
 
+  numRows: computed(function() {
+    return this.get('gridItems').reduce((acc, item) => {
+      let numRows = item.y + item.height;
+      if (numRows > acc) {
+        acc = numRows;
+      }
+      return acc;
+    }, 0);
+  }),
+
   panels: computed(function() {
     return this.get('gridItems').map((item, index) => {
-      return Object.assign(item, {
+      return Object.assign({}, item, {
         "description": `Item ${index}`
       }, {
         "x": item.x + 1,

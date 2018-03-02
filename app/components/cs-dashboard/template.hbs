@@ -1,7 +1,8 @@
-<div class="cs-dashboard" style="grid-template-rows: repeat({{panels.length}}, 1fr)">
+<div class="cs-dashboard" style="grid-template-rows: repeat({{numRows}}, minmax(60px, 1fr)">
   {{#each panels as |panel|}}
     <div class="cs-panel" style="grid-column: {{panel.x}} / span {{panel.width}}; grid-row: {{panel.y}} / span {{panel.height}}">
       {{panel.description}}
     </div>
   {{/each}}
 </div>
+
